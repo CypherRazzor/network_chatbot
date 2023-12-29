@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  rasa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5005:5005"
+    command: /bin/bash -c "source /opt/venv/bin/activate && rasa run --enable-api --cors \"*\""
+    depends_on:
+      - rasa-actions
+
+  rasa-actions:
+    build:
+      context: ./
+      dockerfile: ./actions/Dockerfile
+    container_name: rasa_chat_actions
+    ports:
+      - 5055:5055
+    command: /bin/bash -c "source /opt/venv/bin/activate && rasa run actions"

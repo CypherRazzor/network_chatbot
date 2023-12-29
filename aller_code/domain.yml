@@ -1,0 +1,81 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - tell_time
+  - check_ip_address
+  - calculate_network_details
+  - network_basics
+  - inform_ip
+  - inform_mask
+
+responses:
+  utter_ask_ip:
+    - text: "Kannst du mir bitte eine IP-Adresse geben?"
+  utter_ask_mask:
+    - text: "Kannst du mir bitte eine Subnetzmaske geben?"
+  utter_greet:
+    - text: "Hallo, ich bin Netti der Netzwerkbot. Wie kann ich dir im Bereich der Netzwerke weiterhelfen?"
+      buttons:
+      - title: "Netzwerküberprüfung"
+        payload: "/check_ip_address"
+      - title: "Netzwerkberechnung"
+        payload: "/calculate_network_details"
+      - title: "Grundlagen Netzwerk"
+        payload: "/network_basics"
+      - title: "Beenden"
+        payload: "/goodbye"
+  utter_main_menu:
+    - text: "Ich hoffe ich konnte dir bei der vorigen Anfrage entsprechend weiterhelfen. Kann ich noch etwas für dich tun?"
+      buttons:
+      - title: "Netzwerküberprüfung"
+        payload: "/check_ip_address"
+      - title: "Netzwerkberechnung"
+        payload: "/calculate_network_details"
+      - title: "Grundlagen Netzwerk"
+        payload: "/network_basics"
+      - title: "Beenden"
+        payload: "/goodbye"
+
+  utter_goodbye:
+  - text: "Tschüss"
+
+  utter_iamabot:
+  - text: "Ja, ich bin ein Chatbot."
+
+actions:
+- action_tell_time
+- action_check_ip_address
+- action_calculate_network_details
+- action_network_basics
+- validate_network_form
+
+entities:
+  - ip
+  - mask
+
+slots:
+  ip:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: ip
+  mask:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: mask
+
+forms:
+  network_form:
+    required_slots:
+      - ip
+      - mask
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

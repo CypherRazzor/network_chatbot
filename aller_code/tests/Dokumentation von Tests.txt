@@ -1,0 +1,16 @@
+# In Projektoprdner wechseln
+
+# Erstelle eine Python-Virtualenv
+py -3.10 -m venv env
+
+# Aktiviere die Virtualenv
+.\env\Scripts\Activate.ps1
+
+
+# Installiere die Anforderungen aus der requirements.txt Datei
+pip install -r .\tests\requirements.txt
+
+# Starten von tests_actions.py
+python .\tests\tests_actions.py
+
+# Ende

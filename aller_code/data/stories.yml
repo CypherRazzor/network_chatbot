@@ -1,0 +1,59 @@
+version: "3.1"
+
+stories:
+
+- story: Tell time story
+  steps:
+  - intent: tell_time
+  - action: action_tell_time
+  - action: utter_main_menu
+
+- story: Network Basics
+  steps:
+  - intent: network_basics
+  - action: action_network_basics
+
+- story: begrüßungsstory
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: botchallenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: CheckIPandSubnet
+  steps:
+  - intent: check_ip_address
+  - action: network_form
+  - active_loop: network_form
+  - slot_was_set:
+      - ip: [ip]
+  - slot_was_set:
+      - mask: [mask]
+  - active_loop: null
+  - action: action_check_ip_address
+
+- story: CalculateNetworkDetails
+  steps:
+  - intent: calculate_network_details
+  - action: network_form
+  - active_loop: network_form
+  - slot_was_set:
+      - ip: [ip]
+  - slot_was_set:
+      - mask: [mask]
+  - active_loop: null
+  - action: action_calculate_network_details
+  
+#- story: CalculateNetworkDetails
+  #steps:
+  #- intent: calculate_network_details
+  #- action: action_calculate_network_details
+  #- action: utter_main_menu2

@@ -1,0 +1,8 @@
+:root {
+  /* red theme */
+  --main-color: rgb(155, 3, 104);
+  --sec-color: rgb(245, 142, 142);
+  --back-color-old: rgba(102, 217, 255, 40%);
+  --back-color: #fff;
+  --ovality: 15pt;
+}

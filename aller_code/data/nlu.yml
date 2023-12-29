@@ -1,0 +1,164 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hallo
+    - hi
+    - hallo dort
+    - guten Morgen
+    - guten Abend
+    - moin
+    - hey da
+    - auf geht's
+    - hey Kumpel
+    - guten Morgen
+    - guten Abend
+    - guten Nachmittag
+
+- intent: goodbye
+  examples: |
+    - tschüss
+    - auf Wiedersehen
+    - bis später
+    - gute Nacht
+    - tschau
+    - leb wohl
+    - einen schönen Tag noch
+    - man sieht sich
+    - tschüssi
+    - bis dann
+
+- intent: affirm
+  examples: |
+    - ja
+    - j
+    - in der Tat
+    - natürlich
+    - das hört sich gut an
+    - korrekt
+
+- intent: deny
+  examples: |
+    - nein
+    - n
+    - niemals
+    - das denke ich nicht
+    - mag ich nicht
+    - auf keinen Fall
+    - nicht wirklich
+
+- intent: tell_time
+  examples: |
+    - Wie spät ist es?
+    - Kannst du mir die Uhrzeit sagen?
+    - Ich möchte wissen, wie spät es ist.
+    - Uhrzeit
+    - Zeit
+    - Aktuelle Zeit
+    - Was zeigt die Uhr gerade?
+    - Könntest du mir die momentane Uhrzeit nennen?
+    - Ich brauche die genaue Uhrzeit, bitte.
+    - Wie viel Uhr ist es jetzt?
+    - Sag mir bitte die aktuelle Uhrzeit.
+    - Kannst du mir sagen, wie spät wir es haben?
+    - Welche Zeit ist es im Moment?
+    - Könntest du mir die jetzige Uhrzeit sagen?
+    - Ich würde gerne die Uhrzeit erfahren.
+    - Kannst du mir die Zeit geben?
+
+- intent: check_ip_address
+  examples: |
+    - Kannst du meine aktuelle IP-Adresse überprüfen?
+    - Überprüfe die Gültigkeit meiner Netzwerkadresse.
+    - Ist meine Subnetzmaske richtig für mein lokales Netzwerk?
+    - Kannst du mir sagen, ob meine Netzwerkadresse gültig ist?
+    - Ich brauche eine Überprüfung meiner Subnetzmaske.
+    - Wie finde ich heraus, ob meine IP-Adresse korrekt ist?
+    - Kannst du bestätigen, dass meine Subnetzmaske für mein Netzwerk passt?
+    - Überprüfe bitte, ob meine IP-Adresse in Ordnung ist.
+    - Ich bin mir nicht sicher über meine Subnetzmaske, kannst du helfen?
+    - Wie überprüfe ich, ob meine IP und Subnetzmaske kompatibel sind?
+    - Kannst du die Gültigkeit meiner Netzwerkeinstellungen überprüfen?
+    - Ich habe Fragen zu meiner Subnetzmaske, kannst du helfen?
+    - Überprüfe, ob meine Netzwerkkonfiguration korrekt ist.
+    - Wie kann ich sicherstellen, dass meine IP-Einstellungen richtig sind?
+    - Gibt es ein Problem mit meiner Subnetzmaske?
+    - Ist 192.168.0.1 eine passende IP-Adresse für das Subnetz?
+    - Prüfe, ob 172.16.0.2 eine funktionierende IP-Adresse ist.
+    - Kannst du bestätigen, dass 192.168.1.2 und 255.255.255.0 kompatibel sind?
+    - Überprüfe bitte, ob 10.0.0.2 eine zulässige IP-Adresse ist.
+    - Ist die Kombination aus IP 192.168.1.3 und Subnetzmaske 255.255.248.0 korrekt?
+    - Kannst du die IP-Adresse 172.16.0.3 und die Subnetzmaske 255.255.255.128 überprüfen?
+
+- intent: calculate_network_details
+  examples: |
+    - Berechne die Netzwerkinformationen.
+    - Ich brauche Details zu meinem Netzwerk.
+    - Kannst du Netzwerkdetaills berechnen?
+    - Zeig mir Details meines Netzwerks.
+    - Ich möchte mehr über mein Netzwerk erfahren.
+    - Kannst du die Netzwerkparameter berechnen?
+    - Berechne Netzwerkdetails für mich.
+    - Gib mir detaillierte Netzwerkinformationen.
+    - Was sind die spezifischen Details meines Netzwerks?
+    - Zeige Details und Statistiken meines Netzwerks.
+    - Ich brauche eine Netzwerkanalyse.
+    - Kannst du die Netzwerkkonfiguration analysieren?
+    - Ich möchte die Netzwerkspezifikationen wissen.
+    - Berechne die Netzwerkeigenschaften.
+    - Gib mir eine Übersicht über Netzwerkdaten.
+
+- intent: network_basics
+  examples: |
+      - Erkläre mir die Grundlagen von Netzwerken.
+      - Was sind die Basics in Netzwerktechnologie?
+      - Ich möchte mehr über Netzwerke lernen.
+      - Kannst du mir Netzwerkgrundlagen erklären?
+      - Grundlegende Infos zu Netzwerken bitte.
+      - Erzähl mir etwas über Netzwerke.
+      - Was muss ich über Netzwerke wissen?
+      - Ich brauche eine Einführung in Netzwerke.
+      - Erkläre die Grundkonzepte von Netzwerken.
+      - Was ist ein Netzwerk?
+      - Gib mir eine einfache Erklärung zu Netzwerken.
+      - Was sind die wichtigsten Aspekte eines Netzwerks?
+      - Ich möchte Grundwissen über Netzwerke erlangen.
+      - Kannst du mir die Grundlagen der Netzwerktechnik vermitteln?
+      - Erkläre mir die Basis von Computernetzwerken.
+
+- intent: inform_ip
+  examples: |
+    - Meine IP ist [192.168.0.1](ip)
+    - Die IP-Adresse ist [10.0.0.1](ip)
+    - Tragen Sie bitte die IP [172.16.254.3](ip) ein
+    - Meine IPv6-Adresse ist [2001:db8:0:1234:0:567:8:1](ip)
+    - Die Adresse [2001:0db8:85a3:0000:0000:8a2e:0370:7334](ip) wurde zugewiesen
+    - Ändern Sie die IP auf [3ffe:1900:4545:3:200:f8ff:fe21:67cf](ip)
+    - [172.15.26.13](ip)
+    - [245.36.201.205](ip)
+    - [beec:5830:18a9:8c28:0460:80d3:83cd:1ecc](ip)
+    - [9ca4:5db5:e531:caa8:06a6:ceaa:1ca1:8e29](ip)
+- intent: inform_mask
+  examples: |
+    - Die Netzmaske ist [255.255.255.0](mask)
+    - Setze die Maske auf [255.255.255.128](mask)
+    - Verwende die Subnetzmaske [255.255.252.0](mask)
+    - Die CIDR-Notation ist [/24](mask)
+    - Kannst du die CIDR auf [/32](mask) ändern
+    - Bitte konfiguriere die Subnetzmaske zu [/64](mask)
+    - [255.255.252.0](mask)
+    - [255.255.255.128](mask)
+    - [/8](mask)
+    - [/76](mask)
+
+- regex: ip
+  examples: |
+    - (([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))
+    - (((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]{1}[0-9]|[0-9]).){1}((25[0-5]|2[0-4][0-9]|[1]{1}[0-9]{2}|[1-9]{1}[0-9]|[0-9]).){2}((25[0-5]|2[0-4][0-9]|[1]{1}[0-9]{2}|[1-9]{1}[0-9]|[0-9]){1}))
+
+- regex: mask
+  examples: |
+    - ((255\.){3}255|(255\.){3}(254|252|248|240|224|192|128|0)|(255\.){2}(255\.)?(254|252|248|240|224|192|128|0)\.0|255\.(255\.)?(255\.)?(254|252|248|240|224|192|128|0)\.0\.0|(254|252|248|240|224|192|128|0)\.0\.0\.0)
+    - \/(12[0-8]|1[0-1]\d|[1-9]?[0-9])

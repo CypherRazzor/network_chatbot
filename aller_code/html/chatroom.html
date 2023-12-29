@@ -1,0 +1,21 @@
+<head>
+    <link rel="stylesheet" href="Chatroom.css" />
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="theme2.css" />
+</head>
+
+<body>
+    <div class="chat-container"></div>
+    <script src="Chatroom.js"></script>
+    <script type="text/javascript">
+        var chatroom = new window.Chatroom({
+            host: "http://localhost:5005",
+            title: "Chat mit dem Netzwerkbot",
+            container: document.querySelector(".chat-container"),
+            welcomeMessage: "Hallo, ich bin Netti der Netzwerkbot. Wie kann ich dir helfen?",
+            //speechRecognition: "en-US",
+            //voiceLang: "en-US"
+        });
+        chatroom.openChat();
+    </script>
+</body>
